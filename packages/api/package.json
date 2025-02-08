@@ -1,0 +1,25 @@
+{
+  "name": "@app/api",
+  "exports": {
+    "import": "./src/index.ts",
+    "require": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "ncc build src/index.ts -o dist -m",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@app/contracts": "workspace:*",
+    "@fastify/cors": "^10.0.2",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
+    "fastify": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "@vercel/ncc": "^0.38.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
